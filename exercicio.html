@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste JS</title>
+</head>
+<body>
+<style>
+    body{
+    background: white;
+    color: black;
+}
+
+.modo-escuro{
+    background: black;
+    color: white;
+}
+</style>
+
+<script>
+
+{
+    let texto = "1999";
+    let num = parseInt(texto);
+    alert(num+27);
+}
+{
+    let txt = "29.99"
+    let txtnum = parseFloat(txt)
+    alert(txtnum * 2)
+}
+{
+    let numt = "5"
+    let num = 5
+    // Para realizar a soma terá que transformar o 'numt' em um numero  interiro, caso não fizer isso a soma     terá o resultado de '55'
+    let numt1 = parseInt(numt)
+    alert(numt1 + num)
+}
+{
+    let numt = "150"
+    let num = +numt
+    alert(typeof num)
+}
+{
+    let num = 9850
+    let txt = toString(num)
+    alert(typeof txt)
+}
+{
+    /*
+    Boolean = false
+    let txt = toString(Boolean)
+    alert(typeof txt)
+    */
+    // Maneira correta:
+    let flag = false
+    let txtflag = String(flag)
+    alert(txtflag === "false")
+}
+{
+    alert(Number (false))
+    alert(Number(true))
+}
+{
+    let result = Number("R$ 50,00")
+    if (isNaN(resultado)) {
+        alert("Falhou")
+    }
+}
+{
+    let vazio = ""
+    alert(Number(vazio))
+}
+{
+    alert(Boolean(0))
+    alert(Boolean(undefined))
+}
+{
+    let list = []
+    alert(Boolean(list))
+}
+{
+    let num = 255
+    alert(num.toString(16))
+}
+{
+    let val = 10.5566
+    let format = val.toFixed(2)
+    alert(format)
+    alert(typeof format)
+}
+{
+    let sub = "10" - 2
+    alert(sub)
+}
+{
+    let agr = new Date()
+    alert(Number(agr))
+}
+{
+    alert(parseInt("42px"))
+    alert(Number("42px"))
+}
+{
+    let name = "Alex"
+    alert(!!name)
+}
+{
+    let vaz = null
+    alert(String(vaz))
+    alert(Number(vaz))
+}
+{
+    let age = 26
+    let wrt = 'Eu tenho ${age} anos'
+}
+{
+    let dadosJSON = '{"id":1}'
+    let obj = JSON.parse(dadosJSON)
+    alert(typeof obj)
+}
+</script>
+
+<button id="meuBotao">Clique Aqui</button>
+<script>
+document.getElementById("meuBotao").addEventListener("click", () => {
+alert("Botão pressionado!");
+});
+</script>
+
+<p id="texto">Texto Antigo</p>
+<button id="btn">Mudar</button>
+<script>
+document.getElementById("btn").addEventListener("click", () => {
+document.getElementById("texto").innerText = "Texto Atualizado!";
+});
+</script>
+
+<input type="text" id="campoNome">
+<button id="btnPegar">Exibir</button>
+<script>
+document.getElementById("btnPegar").addEventListener("click", () => {
+let nomeDigitado = document.getElementById("campoNome").value;
+alert(nomeDigitado);
+});
+</script>
+
+<div id="bloco" style="width:100px; height:100px; background:blue;"></div>
+<script>
+document.getElementById("bloco").addEventListener("mouseenter", (e) => {
+e.target.style.backgroundColor = "red";
+});
+</script>
+
+<input type="text" id="campoFoco">
+<script>
+let input = document.getElementById("campoFoco");
+input.addEventListener("focus", () => input.style.borderColor = "yellow");
+input.addEventListener("blur", () => input.style.borderColor = "gray");
+</script>
+
+<textarea id="mensagem"></textarea>
+<span id="contador">0</span>
+<script>
+document.getElementById("mensagem").addEventListener("keyup", (e) => {
+document.getElementById("contador").innerText = e.target.value.length;
+});
+</script>
+
+<ul id="listaDeTarefas"></ul>
+<button id="btnAdd">Novo Item</button>
+<script>
+document.getElementById("btnAdd").addEventListener("click", () => {
+let novoLi = document.createElement("li");
+novoLi.innerText = "Nova tarefa agendada";
+document.getElementById("listaDeTarefas").appendChild(novoLi);
+});
+</script>
+
+<button id="btnTema">Alternar Tema</button>
+<script>
+const botao = document.getElementById("btnTema")
+
+botao.addEventListener("click", function() {
+    document.body.classList.toggle("modo-escuro")
+});
+</script>
+
+<form id="meuForm">
+<button type="submit">Enviar</button>
+</form>
+<script>
+document.getElementById("meuForm").addEventListener("submit", function(event) {
+event.preventDefault();
+alert("Envio interceptado com sucesso.");
+});
+</script>
+
+<ul id="grupoItens">
+<li>Item Alfa</li>
+<li>Item Beta</li>
+</ul>
+<script>
+document.getElementById("grupoItens").addEventListener("click", (e) => {
+alert("Você clicou no: " + e.target.innerText);
+});
+</script>
+
+</body>
